@@ -1,4 +1,4 @@
-# zins-admin
+# zins-vadmin
 
 ## Project setup
 ```

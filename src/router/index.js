@@ -1,22 +1,30 @@
-import VueRouter from 'vue-router'
 import Vue from 'vue'
-
-const Login = () => import('@/components/Login')
+import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-// for jump to same path
-const originalPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push (location) {
-  return originalPush.call(this, location).catch(err => err)
-}
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('../views/Home.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../views/About.vue')
+  },
+  {
+    path: '/Login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
+  }
+]
 
-export default new VueRouter({
-    routes: [
-        {
-            path: '/login',
-            name: 'Login',
-            component: Login
-        }
-    ]
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
+
+export default router

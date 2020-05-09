@@ -1,0 +1,30 @@
+{
+  "LOGIN": {
+    "url": "/system/login",
+    "method": "post"
+  },
+  "GET_DEVICE_INFO": {
+    "url": "/cloudpano/device_info",
+    "method": "get"
+  },
+  "GET_FIREWALL_RESOURCE": {
+    "url": "/cloudpano/resource_pools/firewalls?result_query=1",
+    "method": "get"
+  },
+  "GET_VNF_LIST": {
+    "url": "/cloudpano/vnfs?query=%7B%22start%22%3A0%2C%22limit%22%3A50%2C%22page%22%3A1%7D",
+    "method": "get"
+  },
+  "GET_SYSTEM_LOG": {
+    "url": "/cloudpano/logs/system?_dc=1572597544572&query=%7B%22fields%22%3A%5B%5D%2C%22conditions%22%3A%5B%5D%2C%22sorts%22%3A%5B%5D%2C%22start%22%3A0%2C%22limit%22%3A50%2C%22page%22%3A1%7D",
+    "method": "get"
+  },
+  "GET_VNF_LOG": {
+    "url": "/cloudpano/logs/vnf?_dc=1572602244590&query=%7B%22fields%22%3A%5B%5D%2C%22conditions%22%3A%5B%5D%2C%22sorts%22%3A%5B%5D%2C%22start%22%3A0%2C%22limit%22%3A20%2C%22page%22%3A1%7D",
+    "method": "get"
+  },
+  "GET_CONSISTENCIES_RESUTL": {
+    "url": "/cloudpano/consistencies?_dc=1572698505068&query=%7B%22fields%22%3A%5B%5D%2C%22conditions%22%3A%5B%5D%2C%22sorts%22%3A%5B%5D%2C%22start%22%3A0%2C%22limit%22%3A50%2C%22page%22%3A1%7D",
+    "method": "get"
+  }
+}
