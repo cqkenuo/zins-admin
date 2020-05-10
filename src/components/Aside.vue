@@ -1,40 +1,33 @@
 <template>
-  <div>
+  <div class="sidebar">
     <el-menu @open="handleOpen" @close="handleClose" :router=false :default-active="$route.path" @select="handleSelect"
-             :collapse="isCollapse">
-      <el-submenu index="1">
+             class="el-menu-vertical-demo" :collapse="isCollapse">
+      <el-menu-item index="/admin">
+        <i class="el-icon-s-home"></i>
+        <span slot="title">仪表盘</span>
+      </el-menu-item>
+
+
+      <el-submenu index="/admin/system">
         <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一123123123123123</span>
+          <i class="el-icon-setting"></i>
+          <span>系统设置</span>
         </template>
-        <el-menu-item-group>
-          <template slot="title">分组一</template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
+        <el-menu-item index="/admin/system/base">
+          <i class="el-icon-menu"></i>
+          <span slot="title">基本设置</span>
+        </el-menu-item>
+
       </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
+
+
     </el-menu>
-    <el-button type="primary" icon="el-icon-s-fold" v-model="isCollapse" @click="testss()"></el-button>
+    <div class="flod">
+      <el-button type="primary" icon="el-icon-s-fold" v-model="isCollapse" @click="testss()"></el-button>
+    </div>
   </div>
+
+
 </template>
 
 <script>
@@ -74,7 +67,22 @@
 
 <style scoped>
   .el-button {
-
     font-size: 20px;
+  }
+
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
+
+  .el-menu, .el-menu-item {
+    text-align: left;
+  }
+  .sidebar {
+    height: 100%;
+  }
+
+  .flod {
+
   }
 </style>

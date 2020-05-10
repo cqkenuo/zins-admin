@@ -1,7 +1,7 @@
 <template>
   <div class="html">
     <el-container>
-      <el-aside width="250px">
+      <el-aside width="auto">
         <Aside/>
       </el-aside>
 
@@ -35,7 +35,13 @@
 </script>
 
 <style scoped>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
   .el-header {
     padding: 0;
   }
+
 </style>
