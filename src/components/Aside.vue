@@ -1,31 +1,109 @@
 <template>
-  <div class="sidebar">
-    <el-menu @open="handleOpen" @close="handleClose" :router=false :default-active="$route.path" @select="handleSelect"
-             class="el-menu-vertical-demo" :collapse="isCollapse">
-      <el-menu-item index="/admin">
-        <i class="el-icon-s-home"></i>
-        <span slot="title">仪表盘</span>
-      </el-menu-item>
+    <div class="sidebar">
+        <div class="logo">
+            <h1>CSP</h1>
+        </div>
+
+        <el-menu class="side_menu"
+                 @open="handleOpen"
+                 @close="handleClose"
+                 @select="handleSelect"
+                 :router=false
+                 :default-active="$route.path"
+                 :collapse="isCollapse">
+
+            <el-menu-item index="/admin">
+                <i class="el-icon-monitor"></i>
+                <span slot="title">监控</span>
+            </el-menu-item>
+
+            <el-menu-item index="/admin/tenants">
+                <i class="el-icon-office-building"></i>
+                <span slot="title">租户</span>
+            </el-menu-item>
+
+            <el-menu-item index="/admin/vnfs">
+                <i class="el-icon-bank-card"></i>
+                <span slot="title">网元</span>
+            </el-menu-item>
+
+            <el-menu-item index="/admin/resources">
+                <i class="el-icon-receiving"></i>
+                <span slot="title">资源</span>
+            </el-menu-item>
+
+            <el-menu-item index="/admin/templates">
+                <i class="el-icon-reading"></i>
+                <span slot="title">套餐模板</span>
+            </el-menu-item>
+
+            <el-menu-item index="/admin/images">
+                <i class="el-icon-money"></i>
+                <span slot="title">网元镜像</span>
+            </el-menu-item>
+
+            <el-menu-item index="/admin/message">
+                <i class="el-icon-bell"></i>
+                <span slot="title">消息告警</span>
+            </el-menu-item>
 
 
-      <el-submenu index="/admin/system">
-        <template slot="title">
-          <i class="el-icon-setting"></i>
-          <span>系统设置</span>
-        </template>
-        <el-menu-item index="/admin/system/base">
-          <i class="el-icon-menu"></i>
-          <span slot="title">基本设置</span>
-        </el-menu-item>
+            <el-submenu index="/admin/system">
+                <template slot="title">
+                    <i class="el-icon-setting"></i>
+                    <span>系统配置</span>
+                </template>
+                <el-menu-item index="/admin/system/users">
+                    <i class="el-icon-user"></i>
+                    <span slot="title">账户中心</span>
+                </el-menu-item>
 
-      </el-submenu>
+                <el-menu-item index="/admin/system/cloudplatform">
+                    <i class="el-icon-cloudy"></i>
+                    <span slot="title">云平台</span>
+                </el-menu-item>
 
+                <el-menu-item index="/admin/system/lms">
+                    <i class="el-icon-coin"></i>
+                    <span slot="title">LMS配置</span>
+                </el-menu-item>
 
-    </el-menu>
-    <div class="flod">
-      <el-button type="primary" icon="el-icon-s-fold" v-model="isCollapse" @click="testss()"></el-button>
+                <el-menu-item index="/admin/system/network">
+                    <i class="el-icon-data-board"></i>
+                    <span slot="title">网络</span>
+                </el-menu-item>
+
+                <el-menu-item index="/admin/system/trusthost">
+                    <i class="el-icon-postcard"></i>
+                    <span slot="title">可信主机</span>
+                </el-menu-item>
+
+                <el-menu-item index="/admin/system/upgrade">
+                    <i class="el-icon-upload2"></i>
+                    <span slot="title">升级</span>
+                </el-menu-item>
+
+                <el-menu-item index="/admin/system/ntp">
+                    <i class="el-icon-time"></i>
+                    <span slot="title">NTP服务器</span>
+                </el-menu-item>
+                <el-menu-item index="/admin/system/debug">
+                    <i class="el-icon-discover"></i>
+                    <span slot="title">系统调试</span>
+                </el-menu-item>
+            </el-submenu>
+
+        </el-menu>
+        <div class="side_menu_empty"></div>
+
+        <el-menu :collapse="isCollapse" class="side_menu_collapse">
+            <el-menu-item @click="collapse()">
+                <i class="el-icon-s-fold"></i>
+                <span slot="title">收起</span>
+            </el-menu-item>
+        </el-menu>
+
     </div>
-  </div>
 
 
 </template>
@@ -35,7 +113,7 @@
     name: "Aside",
     data() {
       return {
-        isCollapse: false
+        isCollapse: true
       };
     },
     methods: {
@@ -52,7 +130,7 @@
           })
         }
       },
-      testss() {
+      collapse() {
         this.isCollapse = !this.isCollapse
       },
       handleOpen(key, keyPath) {
@@ -66,23 +144,64 @@
 </script>
 
 <style scoped>
-  .el-button {
-    font-size: 20px;
-  }
+    .side_menu:not(.el-menu--collapse) {
+        width: 200px;
+        height: 100%;
+    }
 
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
-  }
+    .side_menu_collapse:not(.el-menu--collapse) {
+        width: 200px;
+    }
 
-  .el-menu, .el-menu-item {
-    text-align: left;
-  }
-  .sidebar {
-    height: 100%;
-  }
+    .el-menu-item {
+        text-align: left;
+        height: 45px;
+        line-height: 45px;
+    }
 
-  .flod {
+    .el-menu-item [class^=el-icon-] {
+        font-size: 20px;
+        margin-right: 20px;
+    }
 
-  }
+    .sidebar {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .side_menu {
+        flex: 1;
+        border: none
+    }
+
+    .side_menu_collapse {
+        border: none
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+</style>
+
+<style>
+    .el-submenu__title {
+        text-align: left;
+        height: 45px;
+        line-height: 45px;
+    }
+
+    .el-submenu .el-menu {
+        border-left: 5px solid #8c939d;
+        border-right: 5px solid #8c939d;
+        background: #EDEDED;
+        overflow: hidden;
+    }
+
+    .el-submenu [class^=el-icon-] {
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
 </style>

@@ -11,7 +11,8 @@
                 </el-header>
 
                 <el-main>
-                    <Monitor/>
+                    <Tenants/>
+                    <!--                    <Monitor/>-->
                 </el-main>
 
             </el-container>
@@ -23,14 +24,14 @@
 <script>
   import Aside from '@/components/Aside.vue'
   import Header from '@/components/Header.vue'
-  import Monitor from "@/components/Monitor.vue"
+  import Tenants from "@/components/Tenants.vue"
+  // import Monitor from "@/components/Monitor.vue"
 
   export default {
-    name: "Admin",
+    name: 'TenantsV',
     components: {
-      Monitor,
+      Tenants,
       Aside,
-      // Footer,
       Header
     }
   }
@@ -42,7 +43,8 @@
 
 <style>
     .el-main {
-        padding: 15px;
-        margin: 0;
+        margin: 15px;
+        padding: 0;
+        border-bottom: 1px solid #EBEBEB;
     }
 </style>

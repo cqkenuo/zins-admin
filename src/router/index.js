@@ -1,14 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
-  },
   {
     path: '/login',
     name: 'Login',
@@ -18,6 +13,14 @@ const routes = [
     path: '/admin',
     name: 'Admin',
     component: () => import('../views/Admin.vue'),
+    meta: {
+      requireAuth: true
+    }
+  },
+  {
+    path: '/admin/tenants',
+    name: 'Tenants',
+    component: () => import('../views/TenantsV.vue'),
     meta: {
       requireAuth: true
     }
