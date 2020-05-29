@@ -42,7 +42,7 @@
 
 <style>
     .el-main {
-        padding: 15px;
-        margin: 0;
+        padding: 15px !important;
+        margin: 0 !important;
     }
 </style>
