@@ -10,7 +10,7 @@
       </el-col>
 
       <el-col :span="8">
-        <NumCard icon_background="yellow" title="资源" icon_class="el-icon-search"/>
+        <NumCard icon_background="#FFCC00" title="资源" icon_class="el-icon-search"/>
       </el-col>
 
     </el-row>
@@ -98,26 +98,12 @@
         </el-card>
       </el-col>
       <el-col :span="12">
-        <el-card class="tenant">
-          <div slot="header" class="card_header">
-            <div class="tenant-icon">
-              <i class="el-icon-office-building c_h_icon"></i>
-            </div>
 
-            <div class="card_h_des">
-              <div class="c_h_desc_title">网元</div>
-              <div class="c_h_desc_content">网元总数</div>
-            </div>
-
-            <div class="c_h_num">
-              0
-            </div>
-          </div>
-          <div class="c_main_c">
-
+        <NumCard icon_background="#99CCCC" title="网元" icon="el-icon-search" :total_num="security_service_total">
+          <div slot="card_main">
             <div id="pieReport" style="width: 100%;height: 300px;"></div>
           </div>
-        </el-card>
+        </NumCard>
 
         <el-card class="box-card">
           <div slot="header" class="licnese_header">

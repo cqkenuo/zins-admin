@@ -15,22 +15,25 @@
         </div>
       </div>
 
-      <div class="card_main">
-        <div class="normal_abnormal">
-          <div class="normal_info">
-            <div>{{normal_num}}</div>
-            <div class="bk_desc normal_abnormal_desc">正常</div>
+      <slot name="card_main">
+        <div class="card_main">
+          <div class="normal_abnormal">
+            <div class="normal_info">
+              <div>{{normal_num}}</div>
+              <div class="bk_desc normal_abnormal_desc">正常</div>
+            </div>
+            <div class="abnormal_info">
+              <div>{{abnormal_num}}</div>
+              <div class="bk_desc normal_abnormal_desc">异常</div>
+            </div>
           </div>
-          <div class="abnormal_info">
-            <div>{{abnormal_num}}</div>
-            <div class="bk_desc normal_abnormal_desc">异常</div>
+          <div class="abnormal_percent_bar">
+            <el-progress color="#227700" :percentage="normal_percent" :show-text="false"
+                         :stroke-width="8"></el-progress>
           </div>
         </div>
-        <div class="abnormal_percent_bar">
-          <el-progress color="#227700" :percentage="normal_percent" :show-text="false"
-                       :stroke-width="8"></el-progress>
-        </div>
-      </div>
+      </slot>
+
     </el-card>
   </div>
 </template>
