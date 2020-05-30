@@ -2,16 +2,15 @@
   <div class="monitor">
     <el-row :gutter="20">
       <el-col :span="8">
-        <MBase/>
+        <NumCard/>
       </el-col>
 
       <el-col :span="8">
-        <MBase/>
-
+        <NumCard icon_background="red" title="安全服务" icon="el-icon-search" :total_num="security_service_total"/>
       </el-col>
 
       <el-col :span="8">
-        <MResource/>
+        <NumCard icon_background="yellow" title="资源" icon_class="el-icon-search"/>
       </el-col>
 
     </el-row>
@@ -148,19 +147,14 @@
 
 <script>
   import echarts from 'echarts'
-  // import MBase from '@/components/monitor/abnormal/MBase.vue'
-  import MBase from "./monitor/abnormal/MBase";
-  import MResource from "./monitor/abnormal/MResource";
+  import NumCard from "./monitor/NumCard";
 
   export default {
     name: 'Monitor',
-    components: {MResource, MBase},
-    comments: {
-      MBase,
-      MResource
-    },
+    components: {NumCard},
     data() {
       return {
+        security_service_total: 3,
         tableData: [{
           vnf_type: '日志审计',
           license_num: '2',
