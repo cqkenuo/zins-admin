@@ -210,12 +210,11 @@
 
     .license_detail {
         padding-top: 20px;
-        padding-bottom: 10px;
+        /*padding-bottom: 10px;*/
     }
 
     .license_percent_bar_box {
         display: flex;
-
         align-items:center;
         justify-content:center;
     }
