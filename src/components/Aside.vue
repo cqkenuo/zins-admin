@@ -98,7 +98,10 @@
 
         <el-menu :collapse="isCollapse" class="side_menu_collapse">
             <el-menu-item @click="collapse()">
-                <i class="el-icon-s-fold"></i>
+
+                <i class="el-icon-s-unfold" v-if="isCollapse"></i>
+                <i class="el-icon-s-fold" v-else></i>
+
                 <span slot="title">收起</span>
             </el-menu-item>
         </el-menu>
