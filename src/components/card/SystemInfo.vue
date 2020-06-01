@@ -17,7 +17,8 @@
                 </div>
 
                 <div class="system_info_progress">
-                    <el-progress :percentage="mem_percent" :stroke-width="3" :show-text="false" :color="colors"></el-progress>
+                    <el-progress :percentage="mem_percent" :stroke-width="3" :show-text="false"
+                                 :color="colors"></el-progress>
                 </div>
 
                 <div class="system_info_desc">
@@ -31,7 +32,8 @@
                 </div>
 
                 <div class="system_info_progress">
-                    <el-progress :percentage="cpu_percent" :stroke-width="3" :show-text="false" :color="colors"></el-progress>
+                    <el-progress :percentage="cpu_percent" :stroke-width="3" :show-text="false"
+                                 :color="colors"></el-progress>
                 </div>
 
 
@@ -46,7 +48,8 @@
                 </div>
 
                 <div class="system_info_progress last_progress">
-                    <el-progress :percentage="disk_percent" :stroke-width="3" :show-text="false" :color="colors"></el-progress>
+                    <el-progress :percentage="disk_percent" :stroke-width="3" :show-text="false"
+                                 :color="colors"></el-progress>
                 </div>
             </div>
         </CardBase>
@@ -87,7 +90,7 @@
         default: 10
       },
       colors: {
-        default: [
+        default: () => [
           {color: 'rgb(103, 194, 58)', percentage: 30},
           {color: 'rgb(230, 162, 60)', percentage: 60},
           {color: '#F56C6C', percentage: 100}
@@ -124,7 +127,7 @@
         padding-bottom: 0;
     }
 
-    .system_info_desc{
+    .system_info_desc {
         display: flex;
     }
 </style>

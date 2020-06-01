@@ -8,14 +8,14 @@
             <el-col :span="8">
                 <NumCard icon_background="#67C23A"
                          title="安全服务"
-                         icon="el-icon-search"
+                         icon="el-icon-guide"
                          :total_num="security_service_total"/>
             </el-col>
 
             <el-col :span="8">
                 <NumCard icon_background="#E6A23C"
                          title="资源"
-                         icon_class="el-icon-search"
+                         icon="el-icon-receiving"
                          :show_icon="show_resource_icon"/>
             </el-col>
 
@@ -29,7 +29,7 @@
             <el-col :span="12">
                 <VnfCard icon_background="#99CCCC"
                          title="网元"
-                         icon="el-icon-search"
+                         icon="el-icon-bank-card"
                          :total_num="security_service_total"/>
 
                 <SystemInfo/>

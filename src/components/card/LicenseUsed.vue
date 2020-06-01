@@ -1,7 +1,7 @@
 <template>
     <div>
         <CardBase :icon="icon" title="许可证" :icon_background="icon_background" :total_num="total_num"
-                  :show_icon="show_icon">
+                  :show_icon="show_icon" class="license_card">
             <div slot="card_main">
                 <div class="license_total">
                     <div class="license_c2">
@@ -88,60 +88,60 @@
 </template>
 
 <script>
-    import CardBase from "./CardBase"
+  import CardBase from "./CardBase"
 
-    export default {
-        components: {
-            CardBase
-        },
-        name: "UsedCard",
-        data() {
-            return {
-                tableData: [{
-                    vnf_type: '日志审计',
-                    license_num: '2',
-                    used: '1'
-                }, {
-                    vnf_type: 'web应用防火墙',
-                    license_num: '2',
-                    used: '1'
-                }, {
-                    vnf_type: '漏扫',
-                    license_num: '2',
-                    used: '1'
-                }, {
-                    vnf_type: '堡垒机',
-                    license_num: '2',
-                    used: '1'
-                }, {
-                    vnf_type: '防火墙',
-                    license_num: '2',
-                    used: '1'
-                }, {
-                    vnf_type: '数据库审计',
-                    license_num: '2',
-                    used: '1'
-                }],
-            }
-        },
-        props: {
-            icon_background: {
-                default: "#409EFF"
-            },
-            title: {
-                default: '标题'
-            },
-            icon: {
-                default: 'el-icon-office-building'
-            },
-            total_num: {
-                default: 0
-            },
-            show_icon: {
-                default: false
-            }
-        }
+  export default {
+    components: {
+      CardBase
+    },
+    name: "UsedCard",
+    data() {
+      return {
+        tableData: [{
+          vnf_type: '日志审计',
+          license_num: '2',
+          used: '1'
+        }, {
+          vnf_type: 'web应用防火墙',
+          license_num: '2',
+          used: '1'
+        }, {
+          vnf_type: '漏扫',
+          license_num: '2',
+          used: '1'
+        }, {
+          vnf_type: '堡垒机',
+          license_num: '2',
+          used: '1'
+        }, {
+          vnf_type: '防火墙',
+          license_num: '2',
+          used: '1'
+        }, {
+          vnf_type: '数据库审计',
+          license_num: '2',
+          used: '1'
+        }],
+      }
+    },
+    props: {
+      icon_background: {
+        default: "#409EFF"
+      },
+      title: {
+        default: '标题'
+      },
+      icon: {
+        default: 'el-icon-office-building'
+      },
+      total_num: {
+        default: 0
+      },
+      show_icon: {
+        default: false
+      }
     }
+  }
 </script>
 
 <style scoped>
@@ -215,7 +215,13 @@
 
     .license_percent_bar_box {
         display: flex;
-        align-items:center;
-        justify-content:center;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<style>
+    .license_card .el-card__body {
+        padding: 20px 20px 10px 20px;
     }
 </style>
