@@ -203,7 +203,7 @@
     }
 
     .el-submenu [class^=el-icon-] {
-        font-size: 20px;
+        font-size: 25px;
         margin-right: 20px;
     }
     .el-submenu .el-menu-item {
