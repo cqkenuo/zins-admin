@@ -14,7 +14,7 @@
                     <div class="card_title_name">{{title}}</div>
                 </div>
 
-                <div class="card_desc_num" v-if="show_icon">
+                <div class="card_desc_num" :style="{color: icon_background}" v-if="show_icon">
                     {{total_num}}
                 </div>
             </div>
@@ -88,7 +88,7 @@
     }
 
     .card_desc_num {
-        color: green;
+        /*color: green;*/
         font-size: 30px;
         line-height: 45px;
     }

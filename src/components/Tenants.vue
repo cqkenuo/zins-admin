@@ -68,7 +68,7 @@
 
                     <div class="create_tenant_footer">
                         <el-button type="primary" size="medium" @click="drawer = false">确认</el-button>
-                        <el-button type="info" size="medium" @click="drawer = false">取消</el-button>
+                        <el-button size="medium" @click="drawer = false">取消</el-button>
 
                     </div>
                 </div>
